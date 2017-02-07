@@ -1,0 +1,32 @@
+This is a set of shell sripts for generating input files and running scripts for different experiments with slightly different params(contact angle, mesh size, meniscus position, etc)
+
+Structure:
+
+------------------------------run.sh is the script to run without hassle. This will handle different server setup.
+Modify X: 1 coarse grid; 2 double grid mesh; 4 double again, which is also the finest grid mesh.
+Modify M: give different position of meniscus. this will be passed into input files eventually.
+
+
+------------------------------one.sh is a series of text.sh
+text.sh is a template for INPUT file with options for different experiment and different contact angle etc
+
+------------------------------two.sh is being a series of jobs.sh
+job.sh is a template for SCRIPT which submits jobs on server and depending on the grid size, determine to use serial script or parallel script
+Also, job.sh will take a template from vogon.sh or vneumann.sh to make a specific parallel script for the server end.
+
+
+------------------------------in-SY3d.exp* is a series of input file templates, which take in grid refinement factor, contact angle size and meniscus position
+con.sh will read in-SY3d.exp* and assemble them as text.exp*.sh. These are the prototype of input files with very specific params.
+
+
+
+###########################################################################################################################################################################################
+###########################################################################################################################################################################################
+###########################################################################################################################################################################################
+
+vogon.sh need to update number of processors and assignment of processors on each direction manually ahead of run.sh being executed
+
+parallel.sh and serial.sh are for parallel and serial simulation script template
+
+single.sh is the script for serial run
+multi.sh is the script for parallel run

@@ -1,0 +1,80 @@
+Domain limit in 0-th dimension: 0 7.6
+Domain limit in 1-th dimension: 0 2.6
+Domain limit in 2-th dimension: 0 20.0
+Computational grid: $((38*$4)) $((13*$4)) $((100*$4))
+Lower boundary in 0-th dimension: REFLECTION_BOUNDARY
+Upper boundary in 0-th dimension: REFLECTION_BOUNDARY
+Lower boundary in 1-th dimension: REFLECTION_BOUNDARY
+Upper boundary in 1-th dimension: REFLECTION_BOUNDARY
+Lower boundary in 2-th dimension: NEUMANN_BOUNDARY
+Upper boundary in 2-th dimension: NEUMANN_BOUNDARY
+
+Max time: 160
+Max step: 1000
+Print interval: 1.0
+Movie frame interval: 1.0
+CFL factor: 0.45
+Type y to use the Fast Merge Algorithm: n
+Type y to turn on turbulence model: n
+Type y to turn on the point propagation reduction in the thin film: n
+Point propagation reduction parameter: 0
+Thin film thickness parameter: 0
+Redistribution interval: 5
+Type yes to turn off auto-redistribution: n
+
+Problem type can be
+        TWO_FLUID_BUBBLE
+        TWO_FLUID_RT
+        TWO_FLUID_KH
+        TWO_FLUID_RS_RV
+        TWO_FLUID_RS_SY
+        FLUID_SOLID_CIRCLE
+Enter problem type: TWO_FLUID_RS_SY
+Projection type can be
+        SIMPLE
+        BELL_COLELLA
+        KIM_MOIN
+        PEROT_BOTELLA
+Enter projection type: BELL_COLELLA
+Enter mean position of fluid interface: 7.5
+Enter the minimum mode numbers: 0
+Enter the maximum mode numbers: 0
+Enter the amplitude standard deviation: 1e-04
+Enter the average phase: 0
+Enter the phase standard deviation: 90
+Enter the degree of Contact Angle: $2
+Enter the starting point of Meniscus: $3
+
+Choices for the perturbation boundary type are
+        PERIODIC
+        SYMMETRIC
+        UNMODIFIED
+Enter the boundary type of perturbation in direction 0: SYMMETRIC
+Enter the boundary type of perturbation in direction 1: SYMMETRIC
+Enter density and viscosity of fluid 1: 0.0215 0.000000161
+Enter density and viscosity of fluid 2: 0.626 0.00000363
+Enter concentration and binary diffusivity of fluid 1: 0 0
+Enter concentration and binary diffusivity of fluid 2: 0 0
+Enter gravity: 0 0 0.014715
+Enter surface tension: 0.0000137
+Enter factor of smoothing radius: 1
+Enter volume fraction threshold: 0.05
+
+Type y to make movie of pressure: y
+Type y to make movie of vorticity: n
+Type y to make movie of velocity: y
+Type y to make movie of density: y
+Type y to make movie of concentration: n
+Type y to make movie of component: n
+Type y to make yz cross section movie: n
+Type y to make xz cross section movie: n
+Type y to make xy cross section movie: n
+Type y to make cross sectional component movie: n
+Type y to make vector velocity field movie: n
+
+************Debugging options*****************
+
+Enter yes for debugging: yes
+Enter the debugging string: trace
+Enter the debugging string: step_size
+Enter the debugging string: PETSc
