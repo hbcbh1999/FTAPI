@@ -37,8 +37,7 @@ Projection type can be
         PEROT_BOTELLA
 Enter projection type: BELL_COLELLA
 Enter mean position of fluid interface: 7.5
-Enter the minimum mode numbers: 0
-Enter the maximum mode numbers: 0
+Enter Perturbation Switch(1 or 0): 1
 Enter the amplitude standard deviation: 1e-04
 Enter the average phase: 0
 Enter the phase standard deviation: 90

@@ -1886,8 +1886,9 @@ EXPORT double level_wave_func_Meniscus(
 
         // FOCUS ON EDGE AND CORNER EFFECTS. NO FOURIER MODES. Smeeton Youngs' 105 Experiment.
 //Comment Start NO FOURIER MODE
-//if (min_n != 0 && max_n != 0)
-//{
+if (wave_params->perturbed)
+{
+        printf(" Interface perturbation is enabled in function %s.\n", __func__);
         // This is a new perturbation theory for SY105, 99, 103, 104 and114:
         // Since we're using reflective boundary condition on X and Y direction, which makes level set function inherits its symmetry property, aka symmetry boundary condition
         // Fourier Series is cosine based only. = \sum_{m,n>0} A_{mn} cos(m k_x x) cos(n k_y y)
@@ -1931,7 +1932,7 @@ EXPORT double level_wave_func_Meniscus(
         }
         //printf("num_modes = %d\n", num_modes);
 
-//}
+}
 //Comment End NO FOURIER MODE
         dist = coords[dim-1] - z;
         // TODO && FIXME: copy 3D meniscus back here.

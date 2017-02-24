@@ -173,6 +173,7 @@ static void initRSSYIntfc(
         int i,j,dim,num_modes;
         char mesg[100],s[Gets_BUF_SIZE],sbdry[200];
         double surfacetension, wv_len,grav,rhop1,rhop2;//for the calculation of wavelength
+        int perturbed;// switch for perturbation theory, 1 is enabled; 0 is disabled. There is no default value. Need to fill in one.
         //variable naming rule and reference here:
         //surfacetension is surface tension
         //wv_len is most unstable wavelength from Smeeton Youngs' paper
@@ -198,12 +199,13 @@ static void initRSSYIntfc(
         CursorAfterString(infile,"Enter mean position of fluid interface:");
         fscanf(infile,"%lf",&level_func_params.z0);
         (void) printf("%12.8g\n",level_func_params.z0);
-        CursorAfterString(infile,"Enter the minimum mode numbers:");
-        fscanf(infile,"%d",&level_func_params.min_n);
-        (void) printf("%d\n",level_func_params.min_n);
-        CursorAfterString(infile,"Enter the maximum mode numbers:");
-        fscanf(infile,"%d",&level_func_params.max_n);
-        (void) printf("%d\n",level_func_params.max_n);
+        CursorAfterString(infile,"Enter Perturbation Switch(1 or 0):");
+        fscanf(infile,"%d",&perturbed);
+        if (perturbed == 1)
+            level_func_params.perturbed = YES;
+        else
+            level_func_params.perturbed = NO;
+        (void) printf("%d\n",level_func_params.perturbed);
         CursorAfterString(infile,"Enter the amplitude standard deviation:");
         fscanf(infile,"%lf",&level_func_params.A_sd);
         (void) printf("%12.8g\n",level_func_params.A_sd);

@@ -341,6 +341,7 @@ typedef struct {
     double Meniscus;
         PERT_BDRY_TYPE  pert_bdry_type[3];
     double wv_len;//most unstable wavelength in Smeeton Youngs' Experiment III
+    boolean perturbed;// switch for Smeeton Youngs' Experiment, due to the fact that number of modes are from Experiments.
 } FOURIER_POLY;
 
 struct _RANDOM_PARAMS_VD
